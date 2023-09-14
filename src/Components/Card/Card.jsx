@@ -1,8 +1,8 @@
 
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BsBookHalf } from "react-icons/bs";
-const Card = ({cards}) => {
-    console.log(cards.details)
+const Card = ({cards,handleList}) => {
+    console.log(handleList)
     return (
         <div className="grid grid-cols-3">
              <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -35,6 +35,7 @@ const Card = ({cards}) => {
  
   <div className="p-6 pt-0">
     <button
+      onClick={()=>handleList(cards)}
       className="select-none rounded-lg w-full bg-[#2F80ED] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button"
       data-ripple-light="true"
