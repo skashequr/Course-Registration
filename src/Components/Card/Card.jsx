@@ -2,7 +2,7 @@
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BsBookHalf } from "react-icons/bs";
 const Card = ({cards,handleList}) => {
-    console.log(handleList)
+   
     return (
         <div className="grid grid-cols-3">
              <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">

@@ -9,7 +9,7 @@ const Cards = ({handleList}) => {
       .then(res => res.json())
       .then(data => setCards(data))
     },[] )
-    console.log(handleList)
+    // console.log(handleList)
     return (
         <div className="grid grid-cols-3 w-[1100px] gap-6 mx-10">
             
