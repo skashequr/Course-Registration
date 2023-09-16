@@ -1,14 +1,21 @@
+import { useState } from "react";
 import List_Eliment from "../ListEliment/List_Eliment";
+import Creadit_Houre from "../Creadit_Houre/Creadit_Houre";
+import TotalCreadit from "../TotalCreadit/TotalCreadit";
 
-const Part_2 = ({list}) => {
-    console.log(list)
+const Part_2 = ({list,remaning,totalCreadit}) => {
+    console.log(remaning)
+    
+    
+   
+    
+    
+    console.log(totalCreadit)
     return (
         <div className=" border-slate-800 text-center">
-            <div>
-            <h3 className=" font-bold text-lg text-[#2F80ED] mb-5">Credit Hour Remaining <span> 7 </span> hr</h3>
-            <hr />
-            </div>
+           <Creadit_Houre remaning={remaning}></Creadit_Houre>
             <div className=" mt-4 ">
+                
                 <h1 className="font-bold text-lg te mb-3">Couse Name</h1>
                 <p className=" text-left">{
                 list.map(eliment => <List_Eliment eliment={eliment}></List_Eliment>)
@@ -17,8 +24,14 @@ const Part_2 = ({list}) => {
 
             </div>
             <div>
-            Total Credit Hour : 13
+            <h1 className=" m-4"><TotalCreadit totalCreadit={totalCreadit}></TotalCreadit></h1>
             </div>
+            <hr />
+            <div>
+                <h3 className=" m-4">Total Price : USD</h3>
+                
+            </div>
+           
         </div>
     );
 };

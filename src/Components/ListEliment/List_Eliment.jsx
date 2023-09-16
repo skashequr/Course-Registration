@@ -1,10 +1,16 @@
+import { useState } from "react";
 
-const List_Eliment = ({eliment}) => {
+const List_Eliment = ({eliment,listLength}) => {
     const {course_title,id} = eliment
+    // console.log(listLength)
+    const [leng,setleng] = useState(1)
+    
     return (
-        <div className=" mb-3">
-            <h1> {course_title}</h1>
+       <ol className=" list-decimal">
+         <div className=" mb-3">
+            <li >{course_title}</li>
         </div>
+       </ol>
     );
 };
 
