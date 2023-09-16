@@ -11,49 +11,26 @@ function App() {
   const [remaning,setRemaning] = useState(20)
   const [totalCreadit,settotalCreadit] = useState(0)
   const handleList = (cards) => {
-    const isExsit = list.find((card)=> cards.id == card.id)
-    
+    const isExsit = list.find((card) => cards.id === card.id);
+  
     if (isExsit) {
-      
-      toast("Already Add")
-      // <ToastContainer></ToastContainer>
+      toast("Already Add");
+    } else {
+      const newRemaning = remaning - cards.credit_hours;
+      const newTotalCreadit = totalCreadit + cards.price;
+  
+      if (newRemaning >= 0) {
+        const newList = [...list, cards];
+        setlist(newList);
+        setRemaning(newRemaning);
+        settotalCreadit(newTotalCreadit);
+      } else {
+        toast('You have not enough creadit');
+      }
     }
-    else{
-      const newList = [...list,cards]
-      setlist(newList)
-      
-
-
-      list.forEach(element => {
-
-        let newremaning = remaning - element.credit_hours 
-        setRemaning(newremaning)  
-        console.log("fgjhfgnfgjhrfbhrfthrt")
-        let newTotalCreadit = totalCreadit + element.price
-        settotalCreadit(newTotalCreadit)
-      });
-
-      // console.log(element.credit_hours )
-      // if (totalCreadit<0) {
-      //   alert ("totalCreadit<0")
-      // }
-      // else{
-      //   <TotalCreadit totalCreadit={totalCreadit}></TotalCreadit>
-      // }
-    
-      
-          
-      
-  if (remaning < 0) {
-    toast('you have not enought creadit')
-  }
- 
-    }
-
-    console.log(remaning)
-
-    
-  } 
+  };
+  
+  
   
   return (
     <>
