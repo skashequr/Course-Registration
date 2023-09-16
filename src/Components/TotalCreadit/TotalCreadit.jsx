@@ -1,10 +1,9 @@
 
-
-const TotalCreadit = ({totalCreadit}) => {
-    console.log(totalCreadit)
+const TotalCreadit = ({hour}) => {
+    console.log(hour)
     return (
         <div>
-            Total Credit Hour : {totalCreadit}
+            Total Credit Hour : {hour}
         </div>
     );
 };

@@ -10,6 +10,7 @@ function App() {
   const [list,setlist] = useState([])
   const [remaning,setRemaning] = useState(20)
   const [totalCreadit,settotalCreadit] = useState(0)
+  const [hour,setHour] = useState(0)
   const handleList = (cards) => {
     const isExsit = list.find((card) => cards.id === card.id);
   
@@ -18,12 +19,13 @@ function App() {
     } else {
       const newRemaning = remaning - cards.credit_hours;
       const newTotalCreadit = totalCreadit + cards.price;
-  
+      const newHour = hour + cards.credit_hours;
       if (newRemaning >= 0) {
         const newList = [...list, cards];
         setlist(newList);
         setRemaning(newRemaning);
         settotalCreadit(newTotalCreadit);
+        setHour(newHour);
       } else {
         toast('You have not enough creadit');
       }
@@ -39,7 +41,7 @@ function App() {
 
       <Cards handleList={handleList}></Cards>
      
-      <Part_2 list={list} remaning={remaning} totalCreadit={totalCreadit}></Part_2>
+      <Part_2 list={list} remaning={remaning} totalCreadit={totalCreadit} hour={hour} ></Part_2>
       <ToastContainer></ToastContainer>
       </div>
     </>

@@ -2,8 +2,9 @@ import { useState } from "react";
 import List_Eliment from "../ListEliment/List_Eliment";
 import Creadit_Houre from "../Creadit_Houre/Creadit_Houre";
 import TotalCreadit from "../TotalCreadit/TotalCreadit";
+import TotalAmount from "../TotalAmount/TotalAmount";
 
-const Part_2 = ({list,remaning,totalCreadit}) => {
+const Part_2 = ({list,remaning,totalCreadit,hour}) => {
     console.log(remaning)
     
     
@@ -24,11 +25,11 @@ const Part_2 = ({list,remaning,totalCreadit}) => {
 
             </div>
             <div>
-            <h1 className=" m-4"><TotalCreadit totalCreadit={totalCreadit}></TotalCreadit></h1>
+            <h1 className=" m-4"><TotalCreadit hour={hour}></TotalCreadit></h1>
             </div>
             <hr />
             <div>
-                <h3 className=" m-4">Total Price : USD</h3>
+                <h3 className=" m-4"><TotalAmount totalCreadit={totalCreadit}></TotalAmount></h3>
                 
             </div>
            
